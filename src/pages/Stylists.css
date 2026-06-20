@@ -1,0 +1,195 @@
+/* Stylists.css */
+.stylists-page {
+  background: linear-gradient(135deg, #fff8fb 0%, #fff0f6 100%);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Hero */
+.stylists-hero {
+  background: linear-gradient(135deg, #ff4f8b, #e63e77);
+  text-align: center;
+  padding: 60px 20px;
+  margin-bottom: 40px;
+}
+
+.stylists-hero h1 {
+  font-size: 48px;
+  color: white;
+  margin-bottom: 12px;
+}
+
+.stylists-hero p {
+  font-size: 18px;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Search */
+.search-section {
+  max-width: 500px;
+  margin: 0 auto 30px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 14px 20px;
+  border: 2px solid #ff4f8b20;
+  border-radius: 50px;
+  font-size: 15px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.search-input:focus {
+  border-color: #ff4f8b;
+  box-shadow: 0 0 0 3px #ff4f8b20;
+}
+
+/* Filters */
+.filters-section {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  padding: 8px 20px;
+  border: 2px solid #ff4f8b;
+  background: white;
+  color: #ff4f8b;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: #ff4f8b;
+  color: white;
+}
+
+/* Grid */
+.stylists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.stylist-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.stylist-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(255,79,139,0.15);
+}
+
+.card-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s;
+}
+
+.stylist-card:hover .card-image img {
+  transform: scale(1.08);
+}
+
+.card-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.card-content h3 {
+  font-size: 24px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.card-content .role {
+  color: #ff4f8b;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.rating {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  color: #666;
+}
+
+.rating span:first-child {
+  color: #f5a623;
+}
+
+.specialty {
+  background: #fff0f6;
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #ff4f8b;
+}
+
+/* Card Footer with View Profile Button at Bottom Right */
+.card-footer {
+  padding: 15px 20px 20px;
+  text-align: right;
+  border-top: 1px solid #f0f0f0;
+}
+
+.view-profile-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff4f8b, #e63e77);
+  color: white;
+  padding: 10px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.view-profile-btn:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(255,79,139,0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .stylists-hero h1 {
+    font-size: 36px;
+  }
+  
+  .stylists-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .filters-section {
+    gap: 8px;
+  }
+  
+  .filter-btn {
+    padding: 6px 14px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,248 @@
+/* ========================================
+   HEADHUNTER HAIRSTYLING - DESIGN SYSTEM
+   HCI-Compliant | Premium Salon Aesthetic
+   ======================================== */
+
+/* ----- CSS VARIABLES ----- */
+:root {
+    /* Color Palette - Warm Luxury */
+    --color-primary: #c58c3b;
+    --color-primary-dark: #a86f2f;
+    --color-primary-light: #e8c96d;
+    --color-secondary: #8a6e4b;
+    --color-background: #fcfaf8;
+    --color-surface: #ffffff;
+    --color-surface-alt: #fff9f5;
+    --color-text: #1f1a16;
+    --color-text-light: #6b625c;
+    --color-text-lighter: #9b928c;
+    --color-border: #f1e7df;
+    --color-border-dark: #e0d6ce;
+    --color-success: #2e7d32;
+    --color-error: #d32f2f;
+    --color-warning: #ed6c02;
+    --color-info: #0288d1;
+    
+    /* Typography */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    
+    /* Spacing - Consistent 8px grid */
+    --space-xs: 4px;
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+    --space-3xl: 64px;
+    
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 24px;
+    --radius-2xl: 32px;
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --shadow-xl: 0 12px 36px rgba(0, 0, 0, 0.12);
+    
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.3s ease;
+    --transition-slow: 0.5s ease;
+    
+    /* Container */
+    --container-max: 1280px;
+    --container-padding: 24px;
+  }
+  
+  /* ----- RESET & BASE ----- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-body);
+    color: var(--color-text);
+    background-color: var(--color-background);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  
+  /* ----- CONTAINER ----- */
+  .container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 var(--container-padding);
+  }
+  
+  /* ----- BUTTONS - Large clickable (Fitts' Law) ----- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: 14px 28px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: var(--radius-md);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    min-height: 52px;
+    min-width: 120px;
+  }
+  
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+  
+  .btn-primary:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+  
+  .btn-outline:hover {
+    background: var(--color-primary);
+    color: white;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--color-text);
+    border-color: var(--color-border-dark);
+  }
+  
+  .btn-secondary:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  /* ----- FORM ELEMENTS - Clear Error Prevention ----- */
+  .form-group {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .form-input,
+  .form-select,
+  .form-textarea {
+    width: 100%;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background: var(--color-surface);
+    transition: all var(--transition-fast);
+  }
+  
+  .form-input:focus,
+  .form-select:focus,
+  .form-textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(197, 140, 59, 0.1);
+  }
+  
+  .form-input.error {
+    border-color: var(--color-error);
+  }
+  
+  .error-message {
+    color: var(--color-error);
+    font-size: 12px;
+    margin-top: var(--space-xs);
+  }
+  
+  /* ----- CARDS ----- */
+  .card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--color-border);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--color-primary-light);
+  }
+  
+  /* ----- UTILITIES ----- */
+  .text-center { text-align: center; }
+  .text-primary { color: var(--color-primary); }
+  .mt-1 { margin-top: var(--space-sm); }
+  .mt-2 { margin-top: var(--space-md); }
+  .mt-3 { margin-top: var(--space-lg); }
+  .mt-4 { margin-top: var(--space-xl); }
+  .mb-1 { margin-bottom: var(--space-sm); }
+  .mb-2 { margin-bottom: var(--space-md); }
+  .mb-3 { margin-bottom: var(--space-lg); }
+  .mb-4 { margin-bottom: var(--space-xl); }
+  
+  /* ----- ANIMATIONS ----- */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+  }
+  
+  /* ----- RESPONSIVE ----- */
+  @media (max-width: 768px) {
+    :root {
+      --container-padding: 16px;
+    }
+    
+    .btn {
+      padding: 12px 24px;
+      min-height: 48px;
+    }
+  }

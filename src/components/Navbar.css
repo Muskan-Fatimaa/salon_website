@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* =========================
+   TOP BAR (WHITE + PINK ACCENT)
+   ========================= */
+
+.top-bar {
+  background: #ffffff;
+  color: #111;
+  font-size: 12px;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  border-bottom: 1px solid #ffe1ec;
+}
+
+.top-bar-left,
+.top-bar-center,
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+/* social / links */
+.top-bar-right a {
+  color: #ff2e88;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.top-bar-right a:hover {
+  color: #ff6aa2;
+  transform: translateY(-2px);
+}
+
+/* =========================
+   NAVBAR (PINK + WHITE LUXURY)
+   ========================= */
+
+.navbar {
+  background: #ffffff;
+  padding: 16px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.35s ease;
+  box-shadow: 0 8px 25px rgba(255, 46, 136, 0.08);
+  border-bottom: 2px solid #ffe1ec;
+}
+
+/* on scroll */
+.navbar.scrolled {
+  padding: 12px 40px;
+  box-shadow: 0 10px 30px rgba(255, 46, 136, 0.15);
+}
+
+/* =========================
+   LOGO
+   ========================= */
+
+.navbar-logo {
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.logo-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #ff2e88;
+  letter-spacing: 1px;
+}
+
+.logo-subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #111;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* =========================
+   NAV LINKS
+   ========================= */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+
+.navbar-links li a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+/* hover + active pink effect */
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  color: #ff2e88;
+  border-bottom-color: #ff2e88;
+}
+
+/* =========================
+   CTA BUTTON (PINK STYLE)
+   ========================= */
+
+.navbar-cta {
+  background: linear-gradient(135deg, #ff2e88, #ff6aa2);
+  color: white !important;
+  padding: 10px 22px !important;
+  border-radius: 30px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 18px rgba(255, 46, 136, 0.25);
+}
+
+.navbar-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(255, 46, 136, 0.35);
+}
+
+/* =========================
+   MOBILE MENU
+   ========================= */
+
+.navbar-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #ff2e88;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 968px) {
+  .top-bar {
+    padding: 8px 20px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-right {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+    border-top: 1px solid #ffe1ec;
+  }
+
+  .navbar-right.open {
+    display: flex;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .navbar-links li a {
+    display: block;
+    padding: 8px 0;
+  }
+}
